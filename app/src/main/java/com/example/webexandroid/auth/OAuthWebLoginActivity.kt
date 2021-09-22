@@ -11,6 +11,7 @@ import com.example.webexandroid.HomeActivity
 import com.example.webexandroid.R
 import com.example.webexandroid.WebexAndroidApp
 import com.example.webexandroid.databinding.ActivityOauthBinding
+import com.example.webexandroid.search.SearchActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class OAuthWebLoginActivity : AppCompatActivity() {
@@ -69,7 +70,7 @@ class OAuthWebLoginActivity : AppCompatActivity() {
     }
 
     private fun onLoggedIn() {
-        startActivity(Intent(this, HomeActivity::class.java))
+        startActivity(Intent(this, SearchActivity::class.java))
         finish()
     }
 

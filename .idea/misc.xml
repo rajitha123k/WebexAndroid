@@ -3,7 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_main.xml" value="0.290625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/drawable/circle_filled_red.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/drawable/ic_call_hold.xml" value="0.18020833333333333" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_call.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_dialer.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_home.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_login.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_main.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/activity_search.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/bottom_sheet_call_options.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/common_fragment_item_list.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/dialog_enter_meeting_pin.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/fragment_call.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/fragment_call_controls.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/fragment_common.xml" value="0.1640625" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/list_item_call_meeting.xml" value="0.11231884057971014" />
+        <entry key="..\:/Users/rkanthet/AndroidStudioProjects/MyApplication3/app/src/main/res/layout/remote_video_view.xml" value="0.1640625" />
       </map>
     </option>
   </component>

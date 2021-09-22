@@ -40,7 +40,7 @@ class SearchActivity : BaseActivity() {
             FragmentStateAdapter(fragmentActivity) {
         override fun createFragment(position: Int): Fragment {
             when (position) {
-                0 -> return DialFragment()
+                //0 -> return DialFragment()
                 1 -> {
                     val bundle = Bundle()
                     bundle.putString(Constants.Bundle.KEY_TASK_TYPE, SearchCommonFragment.Companion.TaskType.TaskSearchSpace)
@@ -48,13 +48,13 @@ class SearchActivity : BaseActivity() {
                     searchFragment.arguments = bundle
                     return searchFragment
                 }
-                2 -> {
-                    val bundle = Bundle()
-                    bundle.putString(Constants.Bundle.KEY_TASK_TYPE, SearchCommonFragment.Companion.TaskType.TaskCallHistory)
-                    val callHistoryFragment = SearchCommonFragment()
-                    callHistoryFragment.arguments = bundle
-                    return callHistoryFragment
-                }
+//                2 -> {
+//                    val bundle = Bundle()
+//                    bundle.putString(Constants.Bundle.KEY_TASK_TYPE, SearchCommonFragment.Companion.TaskType.TaskCallHistory)
+//                    val callHistoryFragment = SearchCommonFragment()
+//                    callHistoryFragment.arguments = bundle
+//                    return callHistoryFragment
+//                }
                 3 -> {
                     val bundle = Bundle()
                     bundle.putString(Constants.Bundle.KEY_TASK_TYPE, SearchCommonFragment.Companion.TaskType.TaskListSpaces)

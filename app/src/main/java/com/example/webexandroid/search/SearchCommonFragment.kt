@@ -214,7 +214,7 @@ class SearchCommonFragment : Fragment() {
 
             fun bind(itemModel: ItemModel) {
                 binding.listItem = itemModel
-                binding.image.setOnClickListener {
+                binding.phoneImage.setOnClickListener {
                     it.context.startActivity(CallActivity.getOutgoingIntent(it.context, itemModel.callerId))
                 }
 

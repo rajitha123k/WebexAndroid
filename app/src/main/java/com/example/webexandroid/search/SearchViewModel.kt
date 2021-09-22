@@ -21,7 +21,7 @@ class SearchViewModel(private val searchRepo: SearchRepository, private val spac
     private val _spaceEventLiveData = MutableLiveData<Pair<WebexRepository.SpaceEvent, Any?>>()
 
     val titles =
-            listOf("Call", "Search", "History", "Spaces")
+            listOf("Contacts","Search")
 
     init {
         webexRepo._spaceEventLiveData = _spaceEventLiveData

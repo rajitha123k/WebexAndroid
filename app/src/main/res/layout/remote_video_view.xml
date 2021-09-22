@@ -25,9 +25,10 @@
 
         <com.ciscowebex.androidsdk.phone.MediaRenderView
             android:id="@+id/view_video"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/name"/>
+            android:layout_width="135dp"
+            android:layout_height="172dp"
+            android:layout_above="@id/name"
+            android:layout_marginBottom="9dp" />
 
         <ImageView
             android:id="@+id/view_avatar"
