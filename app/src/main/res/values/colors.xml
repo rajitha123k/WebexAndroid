@@ -19,6 +19,8 @@
     <color name="lightGreen">#44CF50</color>
     <color name="yellow50">#D67F04</color>
     <color name="transparent">#00000000</color>
+    <color name="colorPurpleLight">#56499b</color>
+    <color name="colorPurpleDark">#3a3170</color>
 
     <!--Gray colors-->
     <color name="gray_40">#B2B2B2</color>

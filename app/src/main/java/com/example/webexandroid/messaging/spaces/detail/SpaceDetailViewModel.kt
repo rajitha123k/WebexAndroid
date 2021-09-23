@@ -8,13 +8,15 @@ import com.example.webexandroid.WebexRepository
 import com.example.webexandroid.messaging.spaces.SpaceMessageModel
 import com.example.webexandroid.messaging.spaces.SpaceModel
 import com.example.webexandroid.messaging.spaces.SpacesRepository
+import com.example.webexandroid.person.PersonModel
+import com.example.webexandroid.person.PersonRepository
 import com.ciscowebex.androidsdk.message.Message
 import io.reactivex.android.schedulers.AndroidSchedulers
 
-class SpaceDetailViewModel(private val spacesRepo: SpacesRepository, private val webexRepository: WebexRepository) : BaseViewModel() {
+class SpaceDetailViewModel(private val spacesRepo: SpacesRepository, private val personRepo: PersonRepository, private val webexRepository: WebexRepository) : BaseViewModel() {
     private val tag = "SpaceDetailViewModel"
     lateinit var spaceId: String
-
+    private var person: PersonModel? = null
     private val _deleteMessage = MutableLiveData<SpaceMessageModel>()
     val deleteMessage: LiveData<SpaceMessageModel> = _deleteMessage
 
@@ -24,7 +26,11 @@ class SpaceDetailViewModel(private val spacesRepo: SpacesRepository, private val
     private val _messageEventLiveData = MutableLiveData<Pair<WebexRepository.MessageEvent, Any?>>()
     val messageEventLiveData: LiveData<Pair<WebexRepository.MessageEvent, Any?>> = _messageEventLiveData
 
+    private val _getMeData = MutableLiveData<PersonModel>()
+    val getMeData: LiveData<PersonModel> = _getMeData
+
     init {
+        getMe()
         webexRepository._messageEventLiveData = _messageEventLiveData
     }
 
@@ -32,6 +38,15 @@ class SpaceDetailViewModel(private val spacesRepo: SpacesRepository, private val
         super.onCleared()
         webexRepository._messageEventLiveData = null
     }
+
+    private fun getMe() {
+        personRepo.getMe().observeOn(AndroidSchedulers.mainThread()).subscribe {
+            person = it
+            _getMeData.postValue(person)
+//            getMessages()
+        }.autoDispose()
+    }
+
 
     private val _space = MutableLiveData<SpaceModel>()
     val space: LiveData<SpaceModel> = _space
@@ -41,6 +56,14 @@ class SpaceDetailViewModel(private val spacesRepo: SpacesRepository, private val
 
     private val _spaceMessages = MutableLiveData<List<SpaceMessageModel>>()
     val spaceMessages: LiveData<List<SpaceMessageModel>> = _spaceMessages
+
+    fun isSelfMessage(personId: String): Boolean {
+        return personId == person?.personId ?: false
+    }
+
+    fun getPersonId(): String? {
+        return person?.personId
+    }
 
     fun getSpaceById() {
         spacesRepo.fetchSpaceById(spaceId).observeOn(AndroidSchedulers.mainThread()).subscribe({ spaceModel ->

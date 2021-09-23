@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -14,14 +14,47 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:tabGravity="fill"
-        app:tabMode="scrollable" />
+        app:tabMode="scrollable"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab_layout"
+        android:layout_centerVertical="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.viewpager2.widget.ViewPager2>
 
-</LinearLayout>
+    <com.github.clans.fab.FloatingActionMenu
+
+        android:id="@+id/fab_menu"
+        fab_colorNormal="@color/colorPurpleLight"
+        fab_colorPressed="@color/colorPurpleDark"
+        fab_colorRipple="#99FFFFFF"
+        fab_shadowColor="#66000000"
+        fab_showShadow="true"
+        menu_labels_colorPressed="#444444"
+        menu_labels_colorRipple="#66FFFFFF"
+        menu_labels_ellipsize="end"
+        menu_labels_maxLines="-1"
+        menu_labels_position="left"
+        menu_labels_showShadow="true"
+        menu_labels_singleLine="true"
+        menu_openDirection="up"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/logoutFab"
+            fab_label="LOGOUT"
+            fab_size="mini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logout" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>
 </layout>

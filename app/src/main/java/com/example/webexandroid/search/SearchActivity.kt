@@ -1,20 +1,27 @@
 package com.example.webexandroid.search
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.webexandroid.BaseActivity
 import com.example.webexandroid.R
+import com.example.webexandroid.calling.CallActivity
 import com.example.webexandroid.calling.DialFragment
 import com.example.webexandroid.databinding.ActivitySearchBinding
 import com.example.webexandroid.utils.Constants
 import com.example.webexandroid.utils.HorizontalFlipTransformation
+import com.example.webexandroid.utils.SharedPrefUtils
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrategy
 import org.koin.android.viewmodel.ext.android.viewModel
+import com.github.clans.fab.FloatingActionButton
+import com.github.clans.fab.FloatingActionMenu
+import androidx.lifecycle.Observer
 
 class SearchActivity : BaseActivity() {
     lateinit var binding: ActivitySearchBinding
@@ -23,6 +30,20 @@ class SearchActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        webexViewModel.enableBackgroundConnection(webexViewModel.enableBgConnectiontoggle)
+        webexViewModel.setLogLevel(webexViewModel.logFilter)
+        webexViewModel.enableConsoleLogger(webexViewModel.isConsoleLoggerEnabled)
+
+        webexViewModel.signOutListenerLiveData.observe(this@SearchActivity, Observer {
+            it?.let {
+                if (it) {
+                    SharedPrefUtils.clearLoginTypePref(this)
+                    finish()
+                }
+            }
+        })
+
         DataBindingUtil.setContentView<ActivitySearchBinding>(this, R.layout.activity_search)
                 .also { binding = it }
                 .apply {
@@ -33,6 +54,10 @@ class SearchActivity : BaseActivity() {
                                 tab.text = searchViewModel.titles[position]
                             }
                     ).attach()
+
+                    logoutFab.setOnClickListener {
+                        webexViewModel.signOut()
+                    }
                 }
     }
 

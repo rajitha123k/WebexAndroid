@@ -141,7 +141,7 @@ class CallControlsFragment : Fragment(), OnClickListener, CallObserverInterface 
     fun dialOutgoingCall(callerId: String, isModerator: Boolean = false, pin: String = "") {
         Log.d(TAG, "dialOutgoingCall")
         this.callerId = callerId
-        webexViewModel.dial(callerId, getMediaOption(isModerator, "087484602"))
+        webexViewModel.dial(callerId, getMediaOption(isModerator, pin))
     }
 
     private fun checkLicenseAPIs() {

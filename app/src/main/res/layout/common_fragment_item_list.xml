@@ -46,6 +46,8 @@
                         android:layout_width="@dimen/icon_size_list_items"
                         android:layout_height="@dimen/icon_size_list_items"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_baseline_message_24" />
                     <ImageView
@@ -53,6 +55,8 @@
                         android:layout_width="@dimen/icon_size_list_items"
                         android:layout_height="@dimen/icon_size_list_items"
                         android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_baseline_call_24" />
 

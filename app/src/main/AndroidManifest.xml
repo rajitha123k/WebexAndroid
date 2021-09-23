@@ -94,6 +94,16 @@
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".messaging.spaces.detail.SpaceDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".messaging.spaces.detail.FileViewerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".messaging.composer.MessageComposerActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"

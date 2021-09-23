@@ -6,6 +6,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.example.webexandroid.person.personModule
 import com.example.webexandroid.calling.callModule
 import com.example.webexandroid.auth.LoginActivity
 import com.example.webexandroid.auth.loginModule
@@ -66,10 +67,10 @@ class WebexAndroidApp : Application(), LifecycleObserver {
     }
 
     fun loadKoinModules() {
-        loadKoinModules(listOf(mainAppModule, webexModule, loginModule, OAuthWebexModule, searchModule, callModule, messagingModule))
+        loadKoinModules(listOf(mainAppModule, webexModule, loginModule, OAuthWebexModule, searchModule, callModule, messagingModule, personModule))
     }
 
     fun unloadKoinModules() {
-        unloadKoinModules(listOf(mainAppModule, webexModule, loginModule, OAuthWebexModule, searchModule, callModule, messagingModule))
+        unloadKoinModules(listOf(mainAppModule, webexModule, loginModule, OAuthWebexModule, searchModule, callModule, messagingModule, personModule))
     }
 }
